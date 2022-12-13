@@ -11,13 +11,13 @@ const thoughtSchema = new Schema(
       maxlength: 280,
     },
     thoughtTextA: {
-      type: Number,
+      type: String,
       required: "Patient DOB required!",
       minlength: 1,
       maxlength: 280,
     },
     thoughtTextB: {
-      type: Number,
+      type: String,
       required: "Patient MRN required!",
       minlength: 1,
       maxlength: 280,

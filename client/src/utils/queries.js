@@ -9,12 +9,6 @@ export const QUERY_THOUGHTS = gql`
       thoughtTextB
       createdAt
       username
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;
@@ -28,12 +22,6 @@ export const QUERY_THOUGHT = gql`
       thoughtTextB
       createdAt
       username
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;
@@ -44,18 +32,13 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      friendCount
-      friends {
-        _id
-        username
-      }
+
       thoughts {
         _id
         thoughtText
         thoughtTextA
         thoughtTextB
         createdAt
-        reactionCount
       }
     }
   }
@@ -72,12 +55,6 @@ export const QUERY_ME = gql`
         thoughtTextA
         thoughtTextB
         createdAt
-        reactions {
-          _id
-          createdAt
-          reactionBody
-          username
-        }
       }
     }
   }

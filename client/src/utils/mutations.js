@@ -25,11 +25,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!, thoughtTextA: String!, $thoughtTextB:String!) {
+  mutation addThought(
+    $thoughtText: String!
+    $thoughtTextA: String!
+    $thoughtTextB: String!
+  ) {
     addThought(
-      thoughtText: $thoughtText,
-      thoughtTextA: $thoughtTextA,
-      thoughtTextB: $thoughtTextB,
+      thoughtText: $thoughtText
+      thoughtTextA: $thoughtTextA
+      thoughtTextB: $thoughtTextB
     ) {
       _id
       thoughtText
@@ -37,9 +41,6 @@ export const ADD_THOUGHT = gql`
       thoughtTextB
       createdAt
       username
-      reactions {
-        _id
-      }
     }
   }
 `;

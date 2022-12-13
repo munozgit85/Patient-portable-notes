@@ -26,15 +26,20 @@ const ThoughtForm = () => {
       });
     },
   });
-  const [thoughtText, thoughtTextA, thoughtTextB, setText] = useState("");
-  const handleChange = (event) => {};
+  const [thought, setText] = useState("");
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setText((values) => ({ ...values, [name]: value }));
+  };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       // add thought to database
       await addThought({
-        variables: { thoughtText, thoughtTextA, thoughtTextB },
+        variables: { thought },
       });
 
       // clear form value
@@ -54,7 +59,8 @@ const ThoughtForm = () => {
           Enter Patient's Name:
           <input
             type="text"
-            value={thoughtText}
+            name="thoughtText"
+            value={thought.thoughtText || ""}
             className="form-input col-12 col-md-9"
             onChange={handleChange}
           />
@@ -63,7 +69,8 @@ const ThoughtForm = () => {
           Enter Patient's Date of Birth:
           <input
             type="date"
-            value={thoughtTextA}
+            name="thoughtTextA"
+            value={thought.thoughtTextA || ""}
             className="form-input col-12 col-md-9"
             onChange={handleChange}
           />
@@ -72,14 +79,14 @@ const ThoughtForm = () => {
           Enter Patient's Medical Record Number:
           <input
             type="number"
-            value={thoughtTextB}
+            name="thoughtTextB"
+            value={thought.thoughtTextB || ""}
             className="form-input col-12 col-md-9"
             onChange={handleChange}
           />
         </label>
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
+
+        <input type="submit" value="Submit" className="btn col-12 col-md-3" />
       </form>
     </div>
   );

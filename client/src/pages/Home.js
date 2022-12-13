@@ -25,10 +25,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
+            <ThoughtList thoughts={thoughts} title="Patients" />
           )}
         </div>
       </div>

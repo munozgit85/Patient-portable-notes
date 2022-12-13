@@ -13,7 +13,6 @@ const ReactionForm = ({ thoughtId }) => {
       setCharacterCount(event.target.value.length);
     }
   };
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -45,8 +44,8 @@ const ReactionForm = ({ thoughtId }) => {
         <label>
           Check positive symptoms for Review of Systems
           <select
-            value={reactionBody}
-            multiple={true}
+            name="reactionBody"
+            value={reactionBody.reactionBody || ""}
             className="form-input col-12 col-md-9"
             onChange={handleChange}
           >

@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_THOUGHT } from "../utils/queries";
 import ReactionList from "../components/ReactionList";
-import Auth from "../utils/auth";
 import ReactionForm from "../components/ReactionForm";
 
 const SingleThought = (props) => {
@@ -25,21 +24,19 @@ const SingleThought = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {thought.username}
           </span>{" "}
-          thought on {thought.createdAt}
+          Patient created on {thought.createdAt}
         </p>
         <div className="card-body">
           <ul>
-            <li>{thought.thoughtText}</li>
-            <li>{thought.thoughtTextA}</li>
-            <li>{thought.thoughtTextB}</li>
+            <li>Patient Name: {thought.thoughtText}</li>
+            <li>Patient DOB: {thought.thoughtTextA}</li>
+            <li>Patient MRN: {thought.thoughtTextB}</li>
           </ul>
         </div>
       </div>
 
-      {thought.reactionCount > 0 && (
-        <ReactionList reactions={thought.reactions} />
-      )}
-      {Auth.loggedIn() && <ReactionForm thoughtId={thought._id} />}
+      {<ReactionList reactions={thought.reactions} />}
+      {<ReactionForm thoughtId={thought._id} />}
     </div>
   );
 };

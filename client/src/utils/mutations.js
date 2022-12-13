@@ -41,6 +41,9 @@ export const ADD_THOUGHT = gql`
       thoughtTextB
       createdAt
       username
+      reactions {
+        _id
+      }
     }
   }
 `;

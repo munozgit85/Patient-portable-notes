@@ -4,6 +4,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_THOUGHT } from "../utils/queries";
 import ReactionList from "../components/ReactionList";
 import ReactionForm from "../components/ReactionForm";
+import ExamForm from "../components/ExamForm";
+import ExamList from "../components/ExamList";
 
 const SingleThought = (props) => {
   const { id: thoughtId } = useParams();
@@ -37,6 +39,9 @@ const SingleThought = (props) => {
 
       {<ReactionList reactions={thought.reactions} />}
       {<ReactionForm thoughtId={thought._id} />}
+
+      {<ExamList exams={thought.exams} />}
+      {<ExamForm thoughtId={thought._id} />}
     </div>
   );
 };

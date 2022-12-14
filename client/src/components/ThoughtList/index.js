@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ThoughtList = ({ thoughts }) => {
-  if (!thoughts.length) {
-    return <h3>No Recorded Patients</h3>;
-  }
-
+const ThoughtList = ({ thoughts, title }) => {
   return (
     <div>
+      <h3>{title}</h3>
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
@@ -24,9 +21,9 @@ const ThoughtList = ({ thoughts }) => {
             <div className="card-body">
               <Link to={`/thought/${thought._id}`}>
                 <ul>
-                  <li>{thought.thoughtText}</li>
-                  <li>{thought.thoughtTextA}</li>
-                  <li>{thought.thoughtTextB}</li>
+                  <li>Patient Name: {thought.thoughtText}</li>
+                  <li>Patient DOB: {thought.thoughtTextA}</li>
+                  <li>Patient MRN: {thought.thoughtTextB}</li>
                 </ul>
               </Link>
             </div>

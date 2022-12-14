@@ -91,6 +91,23 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    addExam: async (parent, { thoughtId, examBody }, context) => {
+      if (context.user) {
+        const updatedThought = await Thought.findOneAndUpdate(
+          { _id: thoughtId },
+          {
+            $push: {
+              exams: { examBody, username: context.user.username },
+            },
+          },
+          { new: true, runValidators: true }
+        );
+
+        return updatedThought;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

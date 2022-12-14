@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 const reactionSchema = require("./Reaction");
 const dateFormat = require("../utils/dateFormat");
+const examSchema = require("./Exam");
 
 const thoughtSchema = new Schema(
   {
@@ -8,19 +9,16 @@ const thoughtSchema = new Schema(
       type: String,
       required: "Patient Name required!",
       minlength: 1,
-      maxlength: 280,
     },
     thoughtTextA: {
       type: String,
       required: "Patient DOB required!",
       minlength: 1,
-      maxlength: 280,
     },
     thoughtTextB: {
       type: String,
       required: "Patient MRN required!",
       minlength: 1,
-      maxlength: 280,
     },
 
     createdAt: {
@@ -33,6 +31,7 @@ const thoughtSchema = new Schema(
       required: true,
     },
     reactions: [reactionSchema],
+    exams: [examSchema],
   },
   {
     toJSON: {

@@ -15,6 +15,12 @@ export const QUERY_THOUGHTS = gql`
         username
         reactionBody
       }
+      exams {
+        _id
+        createdAt
+        username
+        examBody
+      }
     }
   }
 `;
@@ -33,6 +39,12 @@ export const QUERY_THOUGHT = gql`
         createdAt
         username
         reactionBody
+      }
+      exams {
+        _id
+        createdAt
+        username
+        examBody
       }
     }
   }
@@ -71,6 +83,12 @@ export const QUERY_ME = gql`
           _id
           createdAt
           reactionBody
+          username
+        }
+        exams {
+          _id
+          createdAt
+          examBody
           username
         }
       }

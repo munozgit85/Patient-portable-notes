@@ -16,7 +16,7 @@ const ReactionList = ({ reactions }) => {
                 to={`/profile/${reaction.username}`}
                 style={{ fontWeight: 700 }}
               >
-                {reaction.username} on {reaction.createdAt}
+                {reaction.username}
               </Link>
             </p>
           ))}

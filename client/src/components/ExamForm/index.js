@@ -62,6 +62,10 @@ const ExamForm = ({ thoughtId }) => {
             <option value="drainage">drainage</option>
             <option value="periorbital edema">periorbital edema</option>
           </select>
+          <br />
+          Vital signs
+          <br />
+          <textarea placeholder="type vital signs"></textarea>
         </label>
         <button className="btn col-12 col-md-3" type="submit">
           Submit

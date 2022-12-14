@@ -25,19 +25,24 @@ const typeDefs = gql`
     username: String
     reactions: [Reaction]
     exams: [Exam]
+    diagnoses: [Diagnosis]
   }
 
   type Reaction {
     _id: ID
     reactionBody: String
-    createdAt: String
     username: String
   }
 
   type Exam {
     _id: ID
     examBody: String
-    createdAt: String
+    username: String
+  }
+
+  type Diagnosis {
+    _id: ID
+    diagnosisBody: String
     username: String
   }
 
@@ -65,6 +70,7 @@ const typeDefs = gql`
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
 
     addExam(thoughtId: ID!, examBody: String!): Thought
+    addDiagnosis(thoughtId: ID!, diagnosisBody: String!): Thought
   }
 `;
 

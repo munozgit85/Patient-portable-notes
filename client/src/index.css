@@ -153,6 +153,11 @@ nav a:hover {
   font-size: 1.4rem;
 }
 
+li {
+  font-weight: bolder;
+  font-size: larger;
+}
+
 /* FORM */
 .form-label,
 .form-input,

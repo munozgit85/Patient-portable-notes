@@ -16,7 +16,7 @@ const ExamList = ({ exams }) => {
                 to={`/profile/${exam.username}`}
                 style={{ fontWeight: 700 }}
               >
-                {exam.username} on {exam.createdAt}
+                {exam.username}
               </Link>
             </p>
           ))}

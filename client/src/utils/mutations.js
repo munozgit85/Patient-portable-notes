@@ -47,6 +47,9 @@ export const ADD_THOUGHT = gql`
       exams {
         _id
       }
+      diagnoses {
+        _id
+      }
     }
   }
 `;
@@ -71,6 +74,20 @@ export const ADD_EXAM = gql`
       exams {
         _id
         examBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_DIAGNOSIS = gql`
+  mutation addDiagnosis($thoughtId: ID!, $diagnosisBody: String!) {
+    addDiagnosis(thoughtId: $thoughtId, diagnosisBody: $diagnosisBody) {
+      _id
+      diagnoses {
+        _id
+        diagnosisBody
         createdAt
         username
       }

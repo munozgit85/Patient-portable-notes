@@ -6,6 +6,8 @@ import ReactionList from "../components/ReactionList";
 import ReactionForm from "../components/ReactionForm";
 import ExamForm from "../components/ExamForm";
 import ExamList from "../components/ExamList";
+import DiagnosisForm from "../components/DiagnosisForm";
+import DiagnosisList from "../components/DiagnosisList";
 
 const SingleThought = (props) => {
   const { id: thoughtId } = useParams();
@@ -26,7 +28,7 @@ const SingleThought = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {thought.username}
           </span>{" "}
-          Patient created on {thought.createdAt}
+          Patient encounter on {thought.createdAt}
         </p>
         <div className="card-body">
           <ul>
@@ -39,9 +41,16 @@ const SingleThought = (props) => {
 
       {<ReactionList reactions={thought.reactions} />}
       {<ReactionForm thoughtId={thought._id} />}
-
+      <br />
+      <br />
+      <br />
       {<ExamList exams={thought.exams} />}
       {<ExamForm thoughtId={thought._id} />}
+      <br />
+      <br />
+      <br />
+      {<DiagnosisList diagnoses={thought.diagnoses} />}
+      {<DiagnosisForm thoughtId={thought._id} />}
     </div>
   );
 };

@@ -11,15 +11,18 @@ export const QUERY_THOUGHTS = gql`
       username
       reactions {
         _id
-        createdAt
         username
         reactionBody
       }
       exams {
         _id
-        createdAt
         username
         examBody
+      }
+      diagnoses {
+        _id
+        username
+        diagnosisBody
       }
     }
   }
@@ -36,15 +39,18 @@ export const QUERY_THOUGHT = gql`
       username
       reactions {
         _id
-        createdAt
         username
         reactionBody
       }
       exams {
         _id
-        createdAt
         username
         examBody
+      }
+      diagnoses {
+        _id
+        username
+        diagnosisBody
       }
     }
   }
@@ -89,6 +95,12 @@ export const QUERY_ME = gql`
           _id
           createdAt
           examBody
+          username
+        }
+        diagnoses {
+          _id
+          createdAt
+          diagnosisBody
           username
         }
       }

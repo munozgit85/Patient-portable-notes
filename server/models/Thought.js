@@ -3,6 +3,7 @@ const reactionSchema = require("./Reaction");
 const dateFormat = require("../utils/dateFormat");
 const examSchema = require("./Exam");
 const diagnosisSchema = require("./Diagnosis");
+const dispositionSchema = require("./Disposition");
 
 const thoughtSchema = new Schema(
   {
@@ -34,6 +35,7 @@ const thoughtSchema = new Schema(
     reactions: [reactionSchema],
     exams: [examSchema],
     diagnoses: [diagnosisSchema],
+    dispositions: [dispositionSchema],
   },
   {
     toJSON: {

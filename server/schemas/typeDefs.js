@@ -26,6 +26,7 @@ const typeDefs = gql`
     reactions: [Reaction]
     exams: [Exam]
     diagnoses: [Diagnosis]
+    dispositions: [Disposition]
   }
 
   type Reaction {
@@ -43,6 +44,11 @@ const typeDefs = gql`
   type Diagnosis {
     _id: ID
     diagnosisBody: String
+    username: String
+  }
+  type Disposition {
+    _id: ID
+    dispositionBody: String
     username: String
   }
 
@@ -68,9 +74,9 @@ const typeDefs = gql`
       thoughtTextB: String!
     ): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
-
     addExam(thoughtId: ID!, examBody: String!): Thought
     addDiagnosis(thoughtId: ID!, diagnosisBody: String!): Thought
+    addDisposition(thoughtId: ID!, dispositionBody: String!): Thought
   }
 `;
 

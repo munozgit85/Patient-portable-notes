@@ -24,6 +24,11 @@ export const QUERY_THOUGHTS = gql`
         username
         diagnosisBody
       }
+      dispositions {
+        _id
+        username
+        dispositionBody
+      }
     }
   }
 `;
@@ -51,6 +56,11 @@ export const QUERY_THOUGHT = gql`
         _id
         username
         diagnosisBody
+      }
+      dispositions {
+        _id
+        username
+        dispositionBody
       }
     }
   }
@@ -87,21 +97,23 @@ export const QUERY_ME = gql`
         createdAt
         reactions {
           _id
-          createdAt
           reactionBody
           username
         }
         exams {
           _id
-          createdAt
           examBody
           username
         }
         diagnoses {
           _id
-          createdAt
           diagnosisBody
           username
+        }
+        dispositions {
+          _id
+          username
+          dispositionBody
         }
       }
     }

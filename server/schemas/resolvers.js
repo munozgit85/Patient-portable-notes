@@ -125,6 +125,26 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    addDisposition: async (parent, { thoughtId, dispositionBody }, context) => {
+      if (context.user) {
+        const updatedThought = await Thought.findOneAndUpdate(
+          { _id: thoughtId },
+          {
+            $push: {
+              dispositions: {
+                dispositionBody,
+                username: context.user.username,
+              },
+            },
+          },
+          { new: true, runValidators: true }
+        );
+
+        return updatedThought;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
   },
 };
 

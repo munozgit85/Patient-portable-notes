@@ -8,6 +8,8 @@ import ExamForm from "../components/ExamForm";
 import ExamList from "../components/ExamList";
 import DiagnosisForm from "../components/DiagnosisForm";
 import DiagnosisList from "../components/DiagnosisList";
+import DispositionForm from "../components/DispositionForm";
+import DispositionList from "../components/DispositionList";
 
 const SingleThought = (props) => {
   const { id: thoughtId } = useParams();
@@ -51,6 +53,11 @@ const SingleThought = (props) => {
       <br />
       {<DiagnosisList diagnoses={thought.diagnoses} />}
       {<DiagnosisForm thoughtId={thought._id} />}
+      <br />
+      <br />
+      <br />
+      {<DispositionList dispositions={thought.dispositions} />}
+      {<DispositionForm thoughtId={thought._id} />}
     </div>
   );
 };

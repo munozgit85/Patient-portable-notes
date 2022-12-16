@@ -50,6 +50,9 @@ export const ADD_THOUGHT = gql`
       diagnoses {
         _id
       }
+      dispositions {
+        _id
+      }
     }
   }
 `;
@@ -60,7 +63,6 @@ export const ADD_REACTION = gql`
       reactions {
         _id
         reactionBody
-        createdAt
         username
       }
     }
@@ -74,7 +76,6 @@ export const ADD_EXAM = gql`
       exams {
         _id
         examBody
-        createdAt
         username
       }
     }
@@ -88,7 +89,32 @@ export const ADD_DIAGNOSIS = gql`
       diagnoses {
         _id
         diagnosisBody
-        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const ADD_DISPOSITION = gql`
+  mutation addDisposition($thoughtId: ID!, $dispositionBody: String!) {
+    addDisposition(thoughtId: $thoughtId, dispositionBody: $dispositionBody) {
+      _id
+      dispositions {
+        _id
+        dispositionBody
+        username
+      }
+    }
+  }
+`;
+
+export const REMOVE_DISPOSITION = gql`
+  mutation removeDisposition($filter: DispositionFilter!) {
+    removeDisposition(filter: $filter) {
+      _id
+      dispositions {
+        _id
+        dispositionBody
         username
       }
     }

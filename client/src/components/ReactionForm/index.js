@@ -61,6 +61,17 @@ const ReactionForm = ({ thoughtId }) => {
             <option value="Earache">Earache</option>
             <option value="Hearing Loss">Hearing Loss</option>
             <option value="Sore Throat">Sore Throat</option>
+            <option value="Skin Rash">Skin Rash</option>
+            <option value="Shortness of breath">Shortness of breath</option>
+            <option value="Chest Pain">Chest Pain</option>
+            <option value="Cough">Cough</option>
+            <option value="Dizziness">Dizziness</option>
+            <option value="Urinary Pain">Urinary Pain</option>
+            <option value="Swelling">Swelling</option>
+            <option value="Headache">Headache</option>
+            <option value="Bleeding">Bleeding</option>
+            <option value="Loss of vision">Loss of vision</option>
+            <option value="Loss of Hearing">Loss of Hearing</option>
           </select>
         </label>
         <button className="btn col-12 col-md-3" type="submit">

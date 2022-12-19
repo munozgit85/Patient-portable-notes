@@ -108,14 +108,12 @@ export const ADD_DISPOSITION = gql`
   }
 `;
 
-export const REMOVE_DISPOSITION = gql`
-  mutation removeDisposition($filter: DispositionFilter!) {
-    removeDisposition(filter: $filter) {
+export const DELETE_DISPOSITION = gql`
+  mutation deleteDisposition($_id: ID!, $thoughtId: ID!) {
+    deleteDisposition(_id: $id, thoughtId: $thoughtId) {
       _id
       dispositions {
         _id
-        dispositionBody
-        username
       }
     }
   }

@@ -34,7 +34,7 @@ const ThoughtForm = () => {
   return (
     <div>
       <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
+        className="flex-row justify-center justify-space-between-md align-stretch bg-secondary"
         onSubmit={handleFormSubmit}
       >
         <label>

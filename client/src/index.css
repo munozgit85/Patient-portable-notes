@@ -130,6 +130,9 @@ nav a:hover {
 .btn-inline {
   display: inline;
 }
+#installBtn {
+  margin: 0 20px;
+}
 
 /* CARDS */
 .card {

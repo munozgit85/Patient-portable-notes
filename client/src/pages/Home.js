@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_THOUGHTS } from "../utils/queries";
 import ThoughtList from "../components/ThoughtList";
+import hcbgImage from "../assets/ipad.png";
 
 import ThoughtForm from "../components/ThoughtForm";
 
@@ -14,7 +15,16 @@ const Home = () => {
   console.log(thoughts);
 
   return (
-    <main>
+    <main
+      class="bg_image"
+      style={{
+        backgroundImage: "url(" + hcbgImage + ")",
+        backgroundSize: "cover",
+        height: "100vh",
+        color: "#f5f5f5",
+      }}
+    >
+      <header></header>
       <div className="flex-row justify-space-between">
         {
           <div className="col-12 mb-3">
@@ -25,7 +35,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList thoughts={thoughts} title="Patients" />
+            <ThoughtList thoughts={thoughts} />
           )}
         </div>
       </div>

@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <main
-      class="bg_image"
+      className="bg_image"
       style={{
         backgroundImage: "url(" + hcbgImage + ")",
         backgroundSize: "cover",

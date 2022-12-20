@@ -159,7 +159,7 @@ const resolvers = {
           },
           { new: true, runValidators: true }
         );
-
+        console.log("delete function, update disposition", updatedDisposition);
         return updatedDisposition;
       }
 

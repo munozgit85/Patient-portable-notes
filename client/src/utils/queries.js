@@ -128,3 +128,13 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+export const QUERY_DISPOSITION = gql`
+  query disposition($dispositionId: ID!) {
+    disposition(dispositionId: $dispositionId) {
+      _id
+      username
+      dispositionBody
+    }
+  }
+`;

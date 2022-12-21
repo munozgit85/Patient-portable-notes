@@ -109,8 +109,8 @@ export const ADD_DISPOSITION = gql`
 `;
 
 export const DELETE_DISPOSITION = gql`
-  mutation deleteDisposition($dispositionId: ID!, $thoughtId: ID!) {
-    deleteDisposition(dispositionId: $dispositionId, thoughtId: $thoughtId) {
+  mutation deleteDisposition($dispositionId: ID!) {
+    deleteDisposition(dispositionId: $dispositionId) {
       _id
       dispositions {
         _id

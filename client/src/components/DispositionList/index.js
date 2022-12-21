@@ -5,7 +5,7 @@ import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import { DELETE_DISPOSITION } from "../../utils/mutations";
 import Auth from "../../utils/auth";
-import { QUERY_THOUGHT } from "../../utils/queries";
+import { QUERY_DISPOSITION } from "../../utils/queries";
 
 const center = css({
   textAlign: "center",
@@ -14,24 +14,22 @@ const center = css({
 const DispositionList = ({ dispositions }) => {
   const [deleteDisposition] = useMutation(DELETE_DISPOSITION);
 
-  const { id: thoughtId } = useParams();
+  const { id: dispositionId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_THOUGHT, {
-    variables: { id: thoughtId },
+  const { loading } = useQuery(QUERY_DISPOSITION, {
+    variables: { id: dispositionId },
   });
 
-  const thought = data?.thought || {};
-
-  const handleFormDeleteDisposition = async (thoughtId, dispositionId) => {
+  const handleFormDeleteDisposition = async (_id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    console.log("thoughtId", thoughtId, "dispositionId", dispositionId);
+    console.log("dispositionId", _id);
     if (!token) {
       return false;
     }
     try {
       await deleteDisposition({
-        variables: { thoughtId, dispositionId },
+        variables: { dispositionId },
       });
     } catch (err) {
       console.error(err);
@@ -40,6 +38,7 @@ const DispositionList = ({ dispositions }) => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  console.log("loading", loading);
 
   return (
     <div className="card mb-3">
@@ -53,12 +52,13 @@ const DispositionList = ({ dispositions }) => {
           dispositions.map((disposition) => (
             <p className="pill mb-3" key={disposition._id}>
               {disposition.dispositionBody}
+
               <button
                 className="btn"
-                key={thought._id}
-                id={thought._id}
+                name="disposition"
+                id={disposition._id}
                 onClick={() => {
-                  handleFormDeleteDisposition(disposition._id, thought._id);
+                  handleFormDeleteDisposition(dispositionId);
                 }}
               >
                 <i className="fas fa-arrow-up"></i> Delete

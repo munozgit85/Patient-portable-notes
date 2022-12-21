@@ -9,7 +9,8 @@ time-conservative option to charting on-the-go. Healthcare charting is a
 required part of patient care. Adequate charting is, also, essential to
 financial reimbursement. This application best suits the healthcare provider
 who is assessing patients that are in the acute care setting such as emergency
-rooms, hospital floors, and acute rehab units. Providers in this setting are ,
+rooms, hospital floors, and acute rehab units. It would be HIPPA compliant for
+patient safety. Providers in this setting are ,
 probably, multitasking between assessing patients, placing orders, communicating
 with staff, and attending to emergencies. As a result, it is essential that the
 provider has the patient data on hand when traveling throughout to various patient units.

@@ -81,6 +81,7 @@ able to add the disposition to the list.
 - then run `npm start` from the root directory
 
 # Screenshot
+<img width="1440" alt="Screen Shot 2022-12-21 at 8 32 56 PM (2)" src="https://user-images.githubusercontent.com/107218022/209042676-a4c586d3-8fab-4b66-918b-f4a94bfaf7c7.png">
 
 ## Github
 

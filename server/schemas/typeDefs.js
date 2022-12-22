@@ -78,6 +78,7 @@ const typeDefs = gql`
     addDiagnosis(thoughtId: ID!, diagnosisBody: String!): Thought
     addDisposition(thoughtId: ID!, dispositionBody: String!): Thought
     deleteDisposition(dispositionId: ID!): Thought
+    deleteThought(thoughtId: ID!): Thought
   }
 `;
 

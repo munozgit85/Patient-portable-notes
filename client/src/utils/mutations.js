@@ -118,3 +118,14 @@ export const DELETE_DISPOSITION = gql`
     }
   }
 `;
+
+export const DELETE_THOUGHT = gql`
+  mutation deleteThought($id: ID!) {
+    deleteThought(_id: $id) {
+      _id
+      thoughts {
+        _id
+      }
+    }
+  }
+`;

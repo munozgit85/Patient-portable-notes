@@ -14,6 +14,12 @@ import DispositionList from "../components/DispositionList";
 const SingleThought = (props) => {
   const { id: thoughtId } = useParams();
 
+  const handleClick = () => {
+    window.open(
+      "https://csclv.nevada.edu/resources/student-learner-resources/patient-charts-2/"
+    );
+  };
+
   const { loading, data } = useQuery(QUERY_THOUGHT, {
     variables: { id: thoughtId },
   });
@@ -32,6 +38,7 @@ const SingleThought = (props) => {
           </span>{" "}
           Patient encounter on {thought.createdAt}
         </p>
+        <button onClick={handleClick}>Patients Charts</button>
         <div className="card-body">
           <ul>
             <li>Patient Name: {thought.thoughtText}</li>
